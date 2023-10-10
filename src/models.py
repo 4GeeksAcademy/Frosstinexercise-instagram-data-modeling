@@ -22,12 +22,12 @@ class Post(Base):
     user = relationship(User)
 
 class Media(Base):
-    __tablename__= 'media'
+    __tablename__ = 'media'
     id = Column(Integer, primary_key=True)
-    type= Column(enum)
-    ulr = Column(String)
+    Column(String(10))
+    url = Column(String)
     post_id = Column(Integer, ForeignKey('post.id'))
-    post = relationship(P
+    post = relationship(Post)
 
 class Comment(Base):
     __tablename__= 'comment'
